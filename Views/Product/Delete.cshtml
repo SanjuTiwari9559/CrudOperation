@@ -1,0 +1,60 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Product
+@{
+    ViewData["Title"] = "Delete Product";
+}
+<h3>
+    @ViewData["Title"]
+</h3>
+<hr />
+<form asp-action="Delete">
+    <input type="hidden" asp-for="ProductId" />
+    <div class="container">
+        <div class="mb-2">
+            <label asp-for="MProductName" class="Control-level mb-2">
+
+            </label>
+            <div>
+                <input asp-for="MProductName"readonly />
+            </div>
+            <span asp-validation-for="MProductName" class="text-denger"></span>
+        </div>
+        <div class="mb-2">
+            <label asp-for="ProductPrice" class="Control-level mb-2">
+
+            </label>
+            <div>
+                <input asp-for="ProductPrice" readonly/>
+            </div>
+            <span asp-validation-for="ProductPrice" class="text-denger"></span>
+        </div>
+        <div class="mb-2">
+            <label asp-for="ProductQty" class="Control-level mb-2">
+
+            </label>
+            <div>
+                <input asp-for="ProductQty" readonly/>
+            </div>
+            <span asp-validation-for="ProductQty" class="text-denger"></span>
+        </div>
+        <div class="mb-2">
+            <label class="control-label mb-2">
+                CategoryName
+
+            </label>
+
+            <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.Categories" disabled>
+                <option>Select Category</option>
+            </select>
+
+
+        </div>
+        <div>
+            <input type="submit" value="Delete" class="btn btn-danger" />
+        </div>
+    </div>
+</form>
